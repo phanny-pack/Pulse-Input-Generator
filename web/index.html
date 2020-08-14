@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pulse Input Generator</title>
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    
+</head>
+
+<body>
+    <section class="wellcome_area clearfix" id="home">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md">
+                    <div class="wellcome-heading">
+                        <h2>Pulse Input Generator</h2>
+                        <p>Input desired pulse width, gap width (width between the two pulses in a set), and pulse set width (width between each set of pulses):</p>
+                    </div>
+                    <div class="get-start-area">
+                        <form class="form-inline">
+                            <input type="text" id="pulseWidth" class="form-control email" placeholder="Enter pulse width"><span style="margin-left:10px;margin-right:40px">clocks*</span>
+                            <input type="text" id="gapWidth" class="form-control email" placeholder="Enter gap width"><span style="margin-left:10px;margin-right:40px">μs</span>
+                            <input type="text" id="pulseSetWidth" class="form-control email" placeholder="Enter pulse set width"><span style="margin-left:10px;margin-right:40px">μs</span>
+                            <input type="button" class="submit" value="Submit" onclick="submitInput()">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="welcome-thumb">
+            <img id="qr" src="" width="60%">
+        </div> -->
+    </section>
+</body>
+<footer>
+    <p>Made by Chris Phan -- August, 2020</p>
+    <p>*Note* - each Arduino Uno clock is 62.5 nanoseconds - 2 gives
+        125 ns on top of the 150 ns it takes to execute digitalWriteFast. EDIT: incorporating serial inputs adds ~550 ns
+        to pulse width, so entering 0.5 gives ~750 ns pulse width: the smallest I could get it so far</p>
+</footer>
+</html>
